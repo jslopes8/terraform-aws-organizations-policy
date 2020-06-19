@@ -10,13 +10,13 @@ Example of using the module
 module "organizations_scp" {
     source = "/home/jslopes/Documents/CloudTeam/Modules_Terraform/aws/organizations/scps/restrict_root/"
 
-    name            = "SCPRestrictRootAccount"
+    name            = "SidToOverwrite"
 
     # Policy 
     statement    = [
         {
-            sid = "DenyExample"
-            effect  = "Deny" 
+            sid = "SidToOverwrite"
+
             actions = [
                 "*"
             ]
@@ -29,7 +29,7 @@ module "organizations_scp" {
 ```
 Example of using the module, multiple _statement_ and condition blocks
 ```hcl
-module "restrict_root" {
+module "organizations_scp" {
 ...
     statement    = [
         {
@@ -67,9 +67,9 @@ Each document configuration may have one or more statement blocks, which each ac
 
 - sid (Optional) - An ID for the policy statement.
 - effect (Optional) - Either "Allow" or "Deny", to specify whether this statement allows or denies the given actions. The default is "Allow".
-- actions (Optional) - A list of actions that this statement either allows or denies. For example, ["ec2:RunInstances", "s3:*"].
-- not_actions (Optional) - A list of actions that this statement does not apply to. Used to apply a policy statement to all actions except those listed.
-- resources (Optional) - A list of resource ARNs that this statement applies to. This is required by AWS if used for an IAM policy.
+- actions (Optional) - A list of actions that this statement either allows or denies.
+- not_actions (Optional) - A list of actions that this statement does not apply to.
+- resources (Optional) - A list of resource ARNs that this statement applies to.
 - principals (Optional) - A nested configuration block (described below) specifying a resource (or resource pattern) to which this statement applies.
 - condition (Optional) - A nested configuration block (described below) that defines a further, possibly-service-specific condition that constrains whether this statement applies.
 
