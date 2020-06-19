@@ -1,4 +1,4 @@
-resource "aws_organizations_policy" "restrict_root" {
+resource "aws_organizations_policy" "main" {
     name        = var.name
     description = var.description
     type        = var.type
