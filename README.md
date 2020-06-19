@@ -81,7 +81,7 @@ Each document configuration may have one or more statement blocks, which each ac
 | name | The friendly name to assign to the policy. | yes | `string` | `""` |
 | description | A description to assign to the policy. | no | `string` | `"null"` |
 | type | The type of policy to create. Currently, the only valid values are SERVICE_CONTROL_POLICY (SCP) and TAG_POLICY. Defaults to SERVICE_CONTROL_POLICY | no | `string` | `"SERVICE_CONTROL_POLICY"` |
-| statement | A nested configuration block (described below) configuring one statement to be included in the policy document. | yes | `any` | "[]" |
+| statement | A nested configuration block (described below) configuring one statement to be included in the policy document. | yes | `any` | "`[ ]`" |
 
 ## Variable Outputs
 <!-- END OF PRE-COMMIT-TERRAFORM DOCS HOOK -->
