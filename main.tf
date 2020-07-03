@@ -1,3 +1,5 @@
+#################################################################
+# Templete for managed SCP
 resource "aws_organizations_policy" "main" {
     name        = var.name
     description = var.description
@@ -5,7 +7,7 @@ resource "aws_organizations_policy" "main" {
 
     content     = data.aws_iam_policy_document.role_policy.json
 }
-
+# Data Source for iam policy, statement block.
 data "aws_iam_policy_document" "role_policy" {
     dynamic "statement" {
         for_each = var.statement
