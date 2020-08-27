@@ -8,7 +8,7 @@ Example of using the module
 
 ```hcl
 module "organizations_scp" {
-    source = "/home/jslopes/Documents/CloudTeam/Modules_Terraform/aws/organizations/scps/restrict_root/"
+    source = "git@github.com:jslopes8/terraform-aws-organizations-policy.git?ref=v1.1"
 
     name            = "SidToOverwrite"
 
